@@ -17,7 +17,7 @@ public class puppy {
     String name;
     String breed ;
     boolean loudBark;
-    int[] exerciseRequiredPerDay= {0,1,2,3,4};
+    int exerciseRequiredPerDay;
     boolean friendlyWithChildren;
     
     public puppy(int id, String name, String breed) throws IncorrectBreedException{
@@ -55,12 +55,18 @@ public class puppy {
         return breed;
     }
     
-    public void setExercise(int[] exerciseRequiredPerDay){
-        this.exerciseRequiredPerDay = Arrays.copyOf(exerciseRequiredPerDay, exerciseRequiredPerDay.length);
+    public void setExercise(int exerciseRequiredPerDay) throws notEnoughExerciseExcepetion{
+        this.exerciseRequiredPerDay = exerciseRequiredPerDay;
+        try{
+            if (exerciseRequiredPerDay<0 | exerciseRequiredPerDay>4)
+                throw new notEnoughExerciseExcepetion();
+        }catch(notEnoughExerciseExcepetion ex){
+            throw ex;
+        }
     }
     
-    public int[] getExercise(){
-        return Arrays.copyOf(exerciseRequiredPerDay, exerciseRequiredPerDay.length);
+    public int getExercise(){
+        return exerciseRequiredPerDay;
     }
         
 }

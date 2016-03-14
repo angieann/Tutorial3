@@ -6,6 +6,7 @@
 
 import com.examples.one.petstore.IncorrectBreedException;
 import com.examples.one.petstore.overStockException;
+import com.examples.one.petstore.notEnoughExerciseExcepetion;
 import com.examples.one.petstore.puppy;
 import com.examples.one.petstore.puppyDB;
 import org.junit.Test;
@@ -41,6 +42,18 @@ public class puppyTest {
         pdb.addPuppy(p1);
         pdb.addPuppy(p2);
         
+    }
+    
+    @Test(expected = notEnoughExerciseExcepetion.class)
+    public void invalidExercise() throws notEnoughExerciseExcepetion, IncorrectBreedException{
+        puppy p = new puppy(1,"cutie", "Labrador");
+        p.setExercise(9);
+        
+    }
+    
+    public void validExercise() throws notEnoughExerciseExcepetion, IncorrectBreedException{
+        puppy p = new puppy(1,"cutie", "Labrador");
+        p.setExercise(4);
     }
     
 }
