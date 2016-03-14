@@ -13,7 +13,13 @@ import java.util.ArrayList;
  */
 public class puppyDB {
     
-    ArrayList Puppies = new ArrayList<puppy>();
+    ArrayList puppiesList = new ArrayList<puppy>();
+    
+    public puppyDB(){
+        if (puppiesList.size() > 10){
+            throw new overStockException();
+        }
+    }
     
     public boolean addPuppy(puppy p){
         return false;
