@@ -15,9 +15,14 @@ public class puppyDB {
     
     ArrayList puppiesList = new ArrayList<puppy>();
     
-    public puppyDB(){
-        if (puppiesList.size() > 10){
-            throw new overStockException();
+    public puppyDB() throws overStockException{
+        
+        try{
+            if (puppiesList.size() > 10){
+                throw new overStockException();
+            }
+        }catch (overStockException ex){
+            throw ex;
         }
     }
     
