@@ -15,19 +15,22 @@ public class puppyDB {
     
     ArrayList puppiesList = new ArrayList<puppy>();
     
-    public puppyDB() throws overStockException{
+    public puppyDB(){
+        
+    }
+    
+    public boolean addPuppy(puppy p) throws overStockException{
+        puppiesList.add(p);
         
         try{
-            if (puppiesList.size() > 10){
+            if (puppiesList.size() > 2){
                 throw new overStockException();
-            }
+            }else
+                return true;
         }catch (overStockException ex){
             throw ex;
         }
-    }
-    
-    public boolean addPuppy(puppy p){
-        return false;
+        
     }
     
     public boolean delPuppy(int id){

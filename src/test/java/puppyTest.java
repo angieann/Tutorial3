@@ -7,13 +7,14 @@
 import com.examples.one.petstore.IncorrectBreedException;
 import com.examples.one.petstore.overStockException;
 import com.examples.one.petstore.puppy;
+import com.examples.one.petstore.puppyDB;
 import org.junit.Test;
 
 /**
  *
  * @author userElise
  */
-public class puppyTest{
+public class puppyTest {
     
 
     @Test
@@ -26,6 +27,20 @@ public class puppyTest{
     public void invalidPuppy() throws overStockException, IncorrectBreedException{
         puppy p;
         p = new puppy(1, "Lilly", "Ciwawa");
+    }
+    
+    @Test(expected=overStockException.class)
+    public void overStockTest() throws overStockException, IncorrectBreedException{
+        puppy p = new puppy(1,"haq", "Labrador");
+        puppy p1 = new puppy(2, "kif", "Pitbull");
+        puppy p2 = new puppy(3, "xbajt", "Pitbull");
+        
+        puppyDB pdb = new puppyDB();
+        
+        pdb.addPuppy(p1);
+        pdb.addPuppy(p1);
+        pdb.addPuppy(p2);
+        
     }
     
 }
