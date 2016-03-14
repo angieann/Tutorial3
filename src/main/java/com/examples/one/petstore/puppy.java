@@ -47,4 +47,12 @@ public class puppy {
         return Arrays.copyOf(breed, breed.length);
     }
     
+    public void setExercise(int[] exerciseRequiredPerDay){
+        this.exerciseRequiredPerDay = Arrays.copyOf(exerciseRequiredPerDay, exerciseRequiredPerDay.length);
+    }
+    
+    public int[] getExercise(){
+        return Arrays.copyOf(exerciseRequiredPerDay, exerciseRequiredPerDay.length);
+    }
+        
 }
