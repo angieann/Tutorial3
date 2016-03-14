@@ -35,7 +35,7 @@ public class PetTest {
     @Test(expected=overStockException.class)
     public void overStockTest() throws overStockException, IncorrectBreedException{
         Pet p = new Pet(1,"Lillu", "Labrador");
-        Pet p1 = new Pet(2, "Lana", "Persian");
+        Pet p1 = new Pet(2, "Lana", "Pitbull");
         Pet p2 = new Pet(3, "Pixie", "Pitbull");
         
         PetDB pdb = new PetDB();
