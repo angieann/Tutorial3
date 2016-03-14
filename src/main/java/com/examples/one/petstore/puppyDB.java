@@ -15,8 +15,7 @@ public class puppyDB {
     
     ArrayList puppiesList = new ArrayList<puppy>();
     
-    public puppyDB(){
-        
+    public puppyDB(){   
     }
     
     public boolean addPuppy(puppy p) throws overStockException{
