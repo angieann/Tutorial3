@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import com.examples.one.petstore.IncorrectBreedException;
 import com.examples.one.petstore.Kitten;
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -15,13 +16,13 @@ public class kittenTest{
    
 
     @Test
-    public void validKitten(){
+    public void validKitten() throws IncorrectBreedException{
         Kitten k;
         k = new Kitten(1, "Lana", "Persian");
         
     }
     
-    @Test
+    @Test(expected = IncorrectBreedException.class)
     public void invalidKitten() throws Exception
     {
         Kitten k;

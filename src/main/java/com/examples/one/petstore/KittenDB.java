@@ -12,18 +12,36 @@ public class KittenDB {
     
     ArrayList<Kitten> Kittens = new ArrayList<Kitten>();
     
+   public KittenDB() throws overStockException{
+        
+        try{
+            if (Kittens.size() > 10){
+                throw new overStockException();
+            }
+        }catch (overStockException ex){
+            throw ex;
+        }
+    }
+    
     public boolean addKitten(Kitten k){
-        return false;
+        
+        // if kitten is greater than 10, throw exception
+        
+        Kittens.add(k);
+        
+        return true;
+        
     }
     
     public boolean delKitten(int id)
     {
-        return false;
+        Kittens.remove(id);
+        return true;
     }
     
     public Kitten getKitten(int id)
     {
-        return null;
+        return Kittens.get(id);
     }
     
     public int countKittens()

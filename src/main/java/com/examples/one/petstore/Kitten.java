@@ -11,12 +11,22 @@ import java.util.Arrays;
 public class Kitten {
     int id;
     String name;
-    String[] breed = {"Persian", "Siamese", "Bengal"};
+    String breed; 
     boolean sensitiveToFeeding;
     
     
-    public Kitten(int id, String name, String breed){
-    }
+    public Kitten(int id, String name, String breed) throws IncorrectBreedException {
+        try{
+            if (!(breed.equals("Persian"))| (breed.equals("Siamese")) | (breed.equals("Sengal")))
+            {
+                throw  new IncorrectBreedException();
+            }
+        }catch(IncorrectBreedException ex){
+                    throw ex;
+                    }
+        
+        }
+    
 
     public Kitten() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -38,12 +48,12 @@ public class Kitten {
         return name;
     }
     
-    public void setBreed(String[] breed){
-        this.breed = Arrays.copyOf(breed, breed.length);
+    public void setBreed(String breed){
+        this.breed = breed;
     }
     
-    public String[] getBreed(){
-        return Arrays.copyOf(breed, breed.length);
+    public String getBreed(){
+        return breed;
     }
     
  
