@@ -17,7 +17,7 @@ public class Kitten {
     
     public Kitten(int id, String name, String breed) throws IncorrectBreedException {
         try{
-            if (!(breed.equals("Persian"))| (breed.equals("Siamese")) | (breed.equals("Sengal")))
+            if (!(breed.equals("Persian"))& !(breed.equals("Siamese")) & !(breed.equals("Sengal")))
             {
                 throw  new IncorrectBreedException();
             }

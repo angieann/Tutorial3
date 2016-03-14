@@ -6,30 +6,32 @@
 package com.examples.one.petstore;
 
 import java.util.ArrayList;
+import com.examples.one.petstore.overStockException;
 
 
 public class KittenDB {
     
     ArrayList<Kitten> Kittens = new ArrayList<Kitten>();
     
-   public KittenDB() throws overStockException{
+   public KittenDB(){
+   }
+     
+    
+    public boolean addKitten(Kitten k) throws overStockException{
         
-        try{
-            if (Kittens.size() > 10){
+    Kittens.add(k);
+        
+    try{
+            if (Kittens.size() > 2){
                 throw new overStockException();
             }
+            else
+                return true;
         }catch (overStockException ex){
             throw ex;
         }
-    }
     
-    public boolean addKitten(Kitten k){
-        
-        // if kitten is greater than 10, throw exception
-        
-        Kittens.add(k);
-        
-        return true;
+       
         
     }
     
