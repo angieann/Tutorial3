@@ -15,12 +15,20 @@ public class puppy {
     
     int id;
     String name;
-    String[] breed ={"Labrador","Doberman", "Pitbull"} ;
+    String breed ;
     boolean loudBark;
     int[] exerciseRequiredPerDay= {0,1,2,3,4};
     boolean friendlyWithChildren;
     
-    public puppy(int id, String name, String breed){
+    public puppy(int id, String name, String breed) throws IncorrectBreedException{
+        
+        try{
+            if(!(breed.equals("Labrador")) & !(breed.equals("Doberman")) & !(breed.equals("Pitbull")))
+                throw new IncorrectBreedException();
+        }catch(IncorrectBreedException ex){
+            throw ex;
+        }
+        
     }
     
     public void setId(int id){
@@ -39,12 +47,12 @@ public class puppy {
         return name;
     }
     
-    public void setBreed(String[] breed){
-        this.breed = Arrays.copyOf(breed, breed.length);
+    public void setBreed(String breed){
+        this.breed = breed;
     }
     
-    public String[] getBreed(){
-        return Arrays.copyOf(breed, breed.length);
+    public String getBreed(){
+        return breed;
     }
     
     public void setExercise(int[] exerciseRequiredPerDay){
