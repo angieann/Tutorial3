@@ -1,8 +1,8 @@
 package com.examples.one;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+
 
 /**
  * Unit test for simple App.
@@ -17,10 +17,14 @@ public class AppTest extends TestCase {
         super(testName);
     }
 
+<<<<<<< HEAD
   
     /**
      * Rigourous Test :-)
      */
+=======
+
+>>>>>>> 31c3f11e0ac03fc74f806044409407b420290100
     public void testApp() {
         assertTrue(true);
     }
